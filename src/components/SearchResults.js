@@ -1,4 +1,28 @@
 import React from "react";
+import moment from "moment";
+
+const daysBetweenDates = (a, b) => {
+  const firstMoment = moment(a);
+  const secondMoment = moment(b);
+
+  return firstMoment.diff(secondMoment, "days");
+};
+
+const TableRow = props => (
+  <tr>
+    <td scope="col">{props.booking.id}</td>
+    <td scope="col">{props.booking.title}</td>
+    <td scope="col">{props.booking.firstName}</td>
+    <td scope="col">{props.booking.surname}</td>
+    <td scope="col">{props.booking.email}</td>
+    <td scope="col">{props.booking.roomId}</td>
+    <td scope="col">{props.booking.checkInDate}</td>
+    <td scope="col">{props.booking.checkOutDate}</td>
+    <td scope="col">
+      {daysBetweenDates(props.booking.checkOutDate, props.booking.checkInDate)}
+    </td>
+  </tr>
+);
 
 const SearchResults = props => (
   <table className="table">
@@ -16,42 +40,9 @@ const SearchResults = props => (
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <tr>
-          <td scope="col">{props.id}</td>
-          <td scope="col">{props.title}</td>
-          <td scope="col">{props.firstName}</td>
-          <td scope="col">{props.surname}</td>
-          <td scope="col">{props.email}</td>
-          <td scope="col">{props.roomId}</td>
-          <td scope="col">{props.checkInDate}</td>
-          <td scope="col">{props.checkOutDate}</td>
-        </tr>
-      </tr>
-      <tr>
-        <tr>
-          <td scope="col">{props.id}</td>
-          <td scope="col">{props.title}</td>
-          <td scope="col">{props.firstName}</td>
-          <td scope="col">{props.surname}</td>
-          <td scope="col">{props.email}</td>
-          <td scope="col">{props.roomId}</td>
-          <td scope="col">{props.checkInDate}</td>
-          <td scope="col">{props.checkOutDate}</td>
-        </tr>
-      </tr>
-      <tr>
-        <tr>
-          <td scope="col">{props.id}</td>
-          <td scope="col">{props.title}</td>
-          <td scope="col">{props.firstName}</td>
-          <td scope="col">{props.surname}</td>
-          <td scope="col">{props.email}</td>
-          <td scope="col">{props.roomId}</td>
-          <td scope="col">{props.checkInDate}</td>
-          <td scope="col">{props.checkOutDate}</td>
-        </tr>
-      </tr>
+      {props.results.map((booking, index) => (
+        <TableRow key={index} booking={booking} />
+      ))}
     </tbody>
   </table>
 );

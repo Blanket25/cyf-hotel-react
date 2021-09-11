@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = props => (
   <ul>
-    {props.info.map((infoEl, index) => (
+    {props.infoArray.map((infoEl, index) => (
       <li key={index}>{infoEl}</li>
     ))}
   </ul>
