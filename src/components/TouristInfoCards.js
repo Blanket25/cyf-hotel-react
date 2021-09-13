@@ -1,9 +1,9 @@
 import React from "react";
 
 const TouristInfoCard = props => (
-  <div className="card text-center">
+  <div className="card text-center mr-1">
     <img src={props.imgUrl} className="card-img-top h-50" />
-    <h2 className="card-title">{props.name}</h2>
+    <h2 className="card-title mt-3">{props.name}</h2>
     <div className="card-body">
       <a href={props.url} className="btn btn-primary">
         Learn more
@@ -13,7 +13,7 @@ const TouristInfoCard = props => (
 );
 
 const TouristInfoCards = () => (
-  <div className="d-flex flex-row justify-content-center">
+  <div className="d-flex flex-row justify-content-center mt-3">
     <TouristInfoCard
       imgUrl="https://peoplemakeglasgow.com/images/IntroducingGlasgow/Green_city_from_Necropolis.jpg"
       url="https://peoplemakeglasgow.com/"

@@ -1,9 +1,11 @@
 import React from "react";
 
 const Footer = props => (
-  <ul>
+  <ul className="mt-5">
     {props.infoArray.map((infoEl, index) => (
-      <li key={index}>{infoEl}</li>
+      <li className="list-unstyled" key={index}>
+        {infoEl}
+      </li>
     ))}
   </ul>
 );
