@@ -56,3 +56,11 @@ tr {
 .card {
   width: 18rem;
 }
+
+.none {
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.pink {
+  background-color: rgb(226, 126, 165);
+}
