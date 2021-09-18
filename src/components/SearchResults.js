@@ -9,7 +9,7 @@ const daysBetweenDates = (a, b) => {
 };
 
 const TableRow = props => {
-  const [color, setColor] = useState("none");
+  const [color, setColor] = useState();
 
   const highlight = () => {
     setColor("pink");
