@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import moment from "moment";
 
-import CustomerProfile from "./CustomerProfile";
-
 const daysBetweenDates = (dateA, dateB) => {
   const firstMoment = moment(dateA);
   const secondMoment = moment(dateB);

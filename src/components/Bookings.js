@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Search from "./Search.js";
 import SearchResults from "./SearchResults.js";
 import CustomerProfile from "./CustomerProfile";
+import AddNewBooking from "./NewBooking.js";
 
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
@@ -10,10 +11,14 @@ const Bookings = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState();
 
+  // const renderNewBooking = (event) => {
+  //   event.preventDefault();
+  // }
+
   useEffect(() => {
     setIsLoading(true);
 
-    fetch("https://cyf-react.glitch.me/error")
+    fetch("https://cyf-react.glitch.me")
       .then(res => res.json())
       .then(data => {
         if (data.error) throw new Error(data.error);
@@ -49,6 +54,7 @@ const Bookings = () => {
         )}
         {customerProfileId && <CustomerProfile id={customerProfileId} />}
       </div>
+      <AddNewBooking />
     </div>
   );
 };
